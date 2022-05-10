@@ -1,4 +1,5 @@
 document.getElementById("stateSearch").addEventListener("click", stAbbr);
+
 function stAbbr () {
     var stateList = 
     {

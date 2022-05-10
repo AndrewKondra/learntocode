@@ -1,16 +1,9 @@
 console.log('Hello World');
 
-function sumNumbers(x, y, multNumbers) {
-    let a = multNumbers + (x + y);
-    return a;
+document.getElementById("hello").addEventListener("click", numClicks);
+x = 1
+
+function numClicks() {
+    let y = x++
+    console.log('Hello ' + y + ' times');
 }
-function multNumbers(m, n) {
-    let b = m * n;
-    return b;
-}
-let answer = sumNumbers(2, 3, multNumbers(5, 7));
-console.log(answer);
-
-
-
-

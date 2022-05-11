@@ -12,6 +12,7 @@ function sumRain(data) {
     data.forEach((record) => {
         if (record.area in rainSummary) {
             rainSummary[record.area] = rainSummary[record.area] + (record.rain);
+        console.log(rainSummary);
         } else {
             rainSummary[record.area] = record.rain;
         }

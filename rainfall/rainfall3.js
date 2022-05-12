@@ -22,7 +22,7 @@ const rainfall = [
     { area: 'SK', rain: 8 },
     { area: 'AB', rain: 6 },
     { area: 'BC', rain: 6 },
-    { area: 'ON', rain: 1 }
+    { area: 'QC', rain: 7 }
 ];
 
 
@@ -30,21 +30,35 @@ function filterRain(record) {
     return record.rain > 5;
 }
 
+function filterList(list, checkArea) {
+    return list.filter(newList => newList.area === checkArea).length
+}
+
 function addData(rainfall, fn) {
     let rainSummary = [];
     for (const lotsRain of rainfall) {
         if (fn(lotsRain)) {
-            console.log(lotsRain);
             rainSummary.push(lotsRain);
         }
     }
     return rainSummary;
 }
 
-let answer = addData(rainfall, filterRain);
-console.log(answer);
+function sumDays(rainFilt, fn1, fn2) {
+    let daysRain = {};
+    for (const addDays of rainFilt) {
+        if (fn1(addDays)) {
+            daysRain[addDays.area] = (fn2(rainFilt, addDays.area));
+        }
+    }
+    return (daysRain);
+}
 
+let rainFilt = addData(rainfall, filterRain);
+console.log(rainFilt);
 
+let summary = sumDays(rainFilt, filterRain, filterList);
+console.log(summary);
 
 
 
@@ -65,7 +79,7 @@ console.log(answer);
 }; 
 */
 
-/* answer = sumRain([
+/* rainFilt = sumRain([
      { area: 'BC', rain: 12 },
      { area: 'ON', rain: 7 },
      { area: 'BC', rain: 4 },
@@ -73,5 +87,5 @@ console.log(answer);
      { area: 'ON', rain: 8 },
      { area: 'SK', rain: 5 }
  ]);
- console.log(answer);
+ console.log(rainFilt);
  */

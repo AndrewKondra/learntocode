@@ -1,0 +1,1 @@
+rainSummary = { SK: 3, AB: 5, BC: 3, ON: 2, QC: 1 };

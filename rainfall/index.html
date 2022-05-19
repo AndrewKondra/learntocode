@@ -6,11 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="d3.min.js"></script>
+  <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
 </head>
 
 
-
-<body onload="displayRainfall()">
+<!-- <body onload="displayRainfall()"> -->
 
   <style>
     button {
@@ -22,7 +23,7 @@
     }
   </style>
 
-  <p>
+<body>
 
     <span>
       <input type="text" id="prov1" placeholder="Prov" size="5">
@@ -36,11 +37,11 @@
     </span>
     <br>
     <br>
-    <button type="button" id="calcRain" onclick="updateRainfall() ; sumRain() ; displayRainfall()">Add Data</button>
+    <button type="button" id="calcRain" onclick="updateRainfall() ; addData2(rainfall, filterRain)">Add Data</button>
     <br>
   <p> Rainfall by province: <span id='rainChart'></span></p>
 
+  <svg width="600" height="500"></svg><svg width="600" height="500"></svg>
   <script src="rainfall3.js"></script>
-
 
 </body>

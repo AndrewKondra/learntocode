@@ -1,2 +1,65 @@
 greet = "Hello World!"
 print(greet)
+
+def sumscore(winner):
+    twins1 = 0
+    twins2 = 0
+    if  winner == 'hand1':
+        twins1 = twins1 + 1
+    elif winner == 'hand2':
+        twins2 = twins2 + 1      
+    print('The score is : \nPlayer 1 -', twins1,  '\nPlayer 2 - ', twins2)
+    (score(*check()))
+
+
+
+def checkhand(hand):
+        if hand==0:
+            #score(wins1,wins2)
+            exit('Thank you for playing.')
+        elif hand < 1 or hand > 3:
+            hand = int(input("Not an allowable input, please retry:"))
+            return checkhand(hand)
+        else:
+            return hand    
+
+def choice(hand):
+    if hand == 1:
+        choice = "ROCK"
+        return choice
+    elif hand == 2:
+        choice = "PAPER"
+        return choice
+    elif hand == 3:
+        choice = "SCISSORS"
+        return choice
+
+def check():
+    hand1 = checkhand(int(input("Player 1 press 1 for ROCK, 2 for PAPER, 3 for SCISSORS, or 0 to finish: ")))
+    print(hand1)
+    fhand1 = choice(hand1)
+    print("Player 1 has chosen: ",fhand1)
+    hand2 = checkhand(int(input('Player 2 press 1 for ROCK, 2 for PAPER, 3 for SCISSORS:  ')))
+    fhand2 = choice(hand2)
+    print("Player 2 has chosen: ",choice(hand2))
+    print(fhand2)
+    return [hand1,hand2,fhand1,fhand2]
+
+def score(w,x,y,z):
+    a = w
+    b = x
+    c = y
+    d = z
+    if a==b:
+        print('Both players chose ', c, '. It\'s a tie!!!')
+        return(0,0)
+    elif (a==1 and b==3) or (a==2 and b==1) or (a==3 and b==2):
+        print(c, ' beats ', d, '. Plaver 1 wins!')
+        sumscore('hand1')
+    else:
+        print(d, ' beats ', c, '. Plaver 2 wins!')
+        sumscore('hand2')
+
+(score(*check()))
+
+

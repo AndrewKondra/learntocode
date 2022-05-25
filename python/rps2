@@ -1,13 +1,18 @@
 greet = "Hello World! \nWelcome to Andrew\'s favourite game:\n---ROCK : PAPER : SCISSORS---"
 print(greet)
 
+#def names():
+play1 = input("Player 1 please enter your name: ")
+play2 = input("Player 2 please enter your name: ")
+ #   return play1,play2
+
 def addscore():
     score = [0,0]
     playagain = 'y'
     while playagain == 'y': 
         score = check(score)
         playagain = input('Would you like to play again y/n: ')
-    print('The final score is : \nPlayer 1 -', score[0],  '\nPlayer 2 - ', score[1])
+    print('The final score is : \n' + play1 + ' -', score[0],  '\n' + play2 + ' - ', score[1])
 
 def checkhand(hand):
         if hand < 1 or hand > 3:
@@ -27,13 +32,14 @@ def choice(hand):
         choice = "SCISSORS"
         return choice
 
-def check(score):
-    hand1 = checkhand(int(input("Player 1 press 1 for ROCK, 2 for PAPER, 3 for SCISSORS: ")))
+def check(score):    
+  
+    hand1 = checkhand(int(input(play1 + " please press 1 for ROCK, 2 for PAPER, 3 for SCISSORS: ")))
     fhand1 = choice(hand1)
-    print("Player 1 has chosen: ",fhand1)
-    hand2 = checkhand(int(input('Player 2 press 1 for ROCK, 2 for PAPER, 3 for SCISSORS:  ')))
+    print(play1 + " has chosen: ",fhand1)
+    hand2 = checkhand(int(input(play2+ " please press 1 for ROCK, 2 for PAPER, 3 for SCISSORS:  ")))
     fhand2 = choice(hand2)
-    print("Player 2 has chosen: ",choice(hand2))
+    print(play2 + " has chosen: ",choice(hand2))
     a = hand1
     b = hand2
     c = fhand1
@@ -43,19 +49,23 @@ def check(score):
         newscore = score
         printscore(newscore)
     elif (a==1 and b==3) or (a==2 and b==1) or (a==3 and b==2):
-        print(c, ' beats ', d, '. Plaver 1 wins!')
-        newscore = ([(score[0] + 1), (score[1] + 0)])
+        print(c, ' beats ', d, '. ' + play1 +' wins!')
+        newscore = ([(score[0] + 1), (score[1])])
+        print(newscore)
         printscore(newscore)
         #print('The score is : \nPlayer 1 -', newscore[0],  '\nPlayer 2 - ', newscore[1])
         return newscore
     else:
-        print(d, ' beats ', c, '. Plaver 2 wins!')
-        newscore = ([(score[0]), (score[1] + 1)])
+        print(d, ' beats ', c, '. ' + play2 +' wins!')
+        newscore = ([score[0], (score[1] + 1)])
+        print(newscore)
         printscore(newscore)
         return newscore 
     
 def printscore(score):
-     print('The score is : \nPlayer 1 -', score[0],  '\nPlayer 2 - ', score[1])
+    print ('The score is : \n'+ play1 + ' -', (score[0]), '\n' + play2 + ' - ', (score[1]))
+    #print('The score is : \nPlayer 1 -', score[0],  '\nPlayer 2 - ', score[1])
+
 
 
 #if __name__ == '__main__':

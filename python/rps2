@@ -53,7 +53,6 @@ def check(score):
         newscore = ([(score[0] + 1), (score[1])])
         print(newscore)
         printscore(newscore)
-        #print('The score is : \nPlayer 1 -', newscore[0],  '\nPlayer 2 - ', newscore[1])
         return newscore
     else:
         print(d, ' beats ', c, '. ' + play2 +' wins!')
@@ -64,11 +63,7 @@ def check(score):
     
 def printscore(score):
     print ('The score is : \n'+ play1 + ' -', (score[0]), '\n' + play2 + ' - ', (score[1]))
-    #print('The score is : \nPlayer 1 -', score[0],  '\nPlayer 2 - ', score[1])
 
-
-
-#if __name__ == '__main__':
 addscore()
 
 

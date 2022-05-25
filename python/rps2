@@ -51,13 +51,11 @@ def check(score):
     elif (a==1 and b==3) or (a==2 and b==1) or (a==3 and b==2):
         print(c, ' beats ', d, '. ' + play1 +' wins!')
         newscore = ([(score[0] + 1), (score[1])])
-        print(newscore)
         printscore(newscore)
         return newscore
     else:
         print(d, ' beats ', c, '. ' + play2 +' wins!')
         newscore = ([score[0], (score[1] + 1)])
-        print(newscore)
         printscore(newscore)
         return newscore 
     

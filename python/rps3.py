@@ -12,17 +12,16 @@ def addscore():
         playagain = input('Would you like to play again y/n: ')
     print('The final score is : \n' + play1 + ' -',score[0],  '\n' + play2 + ' - ',score[1])
 
-def checkhand(hand):
-    newhand = int(hand)
-    if newhand  > 0 and newhand < 4:
-        return newhand
+def checkhand(player,hand):
+    if hand  > 0 and hand < 4:
+        return hand
     else:
-        hand = input("Not an allowable input, please retry:")
+        hand = input(player + " please press 1 for ROCK, 2 for PAPER, 3 for SCISSORS: ")
         if not hand:
-            return checkhand(0)
+            return checkhand(player,0)
         else:
-            newhand2 = int(hand)
-            return checkhand(newhand2)
+            newhand = int(hand)
+            return checkhand(player,newhand)
 
 def choice(hand):
     if hand == 1:
@@ -35,19 +34,13 @@ def choice(hand):
         choice = "SCISSORS"
         return choice
 
-def play(score): 
-    rps = input(play1 + " please press 1 for ROCK, 2 for PAPER, 3 for SCISSORS: ")
-    while not rps:
-        rps = input(play1 + " please press 1 for ROCK, 2 for PAPER, 3 for SCISSORS: ")
-    hand1 = checkhand(rps)
+def play(score):
+    hand1 = checkhand(play1,0)
     fhand1 = hand1
     fhand1 = choice(hand1)
     print(play1 + " has chosen: ",fhand1)
-    rps = input(play2 + " please press 1 for ROCK, 2 for PAPER, 3 for SCISSORS: ")
-    while not rps:
-        rps = input(play2 + " please press 1 for ROCK, 2 for PAPER, 3 for SCISSORS: ")
-    hand2 = checkhand(rps)
-    fhand2 = int(hand2)
+    hand2 = checkhand(play2,0)
+    fhand2 = hand2
     fhand2 = choice(hand2)
     print(play2 + " has chosen: ",choice(hand2))
     a = hand1

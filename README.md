@@ -16,3 +16,14 @@ For the callback exercise
 D3 exercise
 
 1. Create a line graph of some type
+
+Python
+1. Read a file
+1. Write a file
+1. Connect/read from database
+
+Research Flask
+1. Do a Hello World
+
+JAvascript
+1. Do a screen scrape of weather, json object

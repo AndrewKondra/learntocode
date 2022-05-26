@@ -35,6 +35,7 @@ def choice(hand):
         return choice
 
 def check():
+    rps = 
     hand1 = checkhand(int(input("Player 1 press 1 for ROCK, 2 for PAPER, 3 for SCISSORS, or 0 to finish: ")))
     print(hand1)
     fhand1 = choice(hand1)

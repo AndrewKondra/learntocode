@@ -1,4 +1,4 @@
-greet = "Hello World! \nWelcome to Andrew\'s favourite game:\n---ROCK : PAPER : SCISSORS---"
+greet = "Hello World! \nWelcome to Andrew\'s favourite game:\n--- ROCK : PAPER : SCISSORS ---"
 print(greet)
 
 play1 = input("Player 1 please enter your name: ")
